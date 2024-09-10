@@ -34,7 +34,15 @@ def count_frequency(s: Iterable[Any]) -> Dict[Any, int]:
     if not isinstance(s, IterableClass):
         raise TypeError("Input must be an iterable")
 
-    return dict(Counter(s))
+    # return dict(Counter(s))  # simple way
+
+    r: Dict[Any, int] = {}
+    for i in s:
+        if i in r:
+            r[i] += 1
+            continue
+        r[i] = 1
+    return r
 
 
 if __name__ == "__main__":
