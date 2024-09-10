@@ -34,7 +34,7 @@ def count_frequency(s: Iterable[Any]) -> Dict[Any, int]:
     if not isinstance(s, IterableClass):
         raise TypeError("Input must be an iterable")
 
-    # return dict(Counter(s))  # simple way
+    # return dict(Counter(s))  # simplest way
 
     r: Dict[Any, int] = {}
     for i in s:
@@ -46,5 +46,10 @@ def count_frequency(s: Iterable[Any]) -> Dict[Any, int]:
 
 
 if __name__ == "__main__":
+    # Things I did to improve the original function
+    # 1. gave a proper name to the function for readability
+    # 2. added type hints for the args and specified the return
+    # 3. input type checking added
+    # 4. removed the else statement to reduce the code.
     print("Original------>", f("malayalam"))
     print("Modified------>", count_frequency("malayalam"))
